@@ -219,12 +219,12 @@ const Navbar = ({ openPopup, scrollToSection }) => {
 
       {/* Buttons on Desktop */}
       <div className="hidden lg:flex items-center justify-center gap-[1.5vw]">
-        {/* <button
+        {<button
           onClick={handleTryGame}
           className="py-[0.80vw] px-4 hover:bg-black hover:text-white font-semibold text-[1rem] rounded-md bg-white text-black border-2 border-black transition duration-300 whitespace-nowrap"
         >
           Try the game
-        </button> */}
+        </button>}
         <button
           onClick={openPopup}
           className="py-[0.85vw] px-3 bg-[#DBCDF0] text-black font-semibold text-[1vw] rounded-md hover:bg-[#c09ff3] hover:text-white transition duration-300 whitespace-nowrap"
