@@ -1,0 +1,90 @@
+/* CSS for the Balloon Pop Game */
+
+/* Default styles for laptop screens */
+.popped {
+  background-color: transparent;
+  color: red;
+  transform: scale(0.5);
+  opacity: 0;
+  animation: pop 0.5s forwards;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+}
+
+.icon-button {
+  width: 3.5vw;
+  height: 3.5vw;
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s;
+}
+
+.icon-button img {
+  width: 100%;
+  height: 100%;
+}
+
+.icon-button:hover {
+  background-color: #f0f0f0;
+}
+
+.score-box-container {
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  gap: 1px;
+}
+
+.score-box {
+  background-color: rgba(106, 127, 191, 1);
+  padding: 1vw;
+  font-size: 2vw;
+  width: 3.5vw;
+  height: 3.5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1vw;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+.game-over {
+  font-family: Comic Sans, sans-serif;
+}
+
+.game-over button {
+  margin-top: 1vw;
+  font-size: 1.5vw;
+  padding: 1vw 2vw;
+}
+
+/* Balloon rise animation */
+@keyframes balloonRise {
+  0% {
+    transform: translateY(100vh);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.balloon-rise {
+  animation: balloonRise 1s ease forwards;
+}
+
+/* Pop UP Message */
+
+
