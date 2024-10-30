@@ -8,12 +8,16 @@ require('dotenv').config(); // Load environment variables from .env file
 const app = express();
 const port = 5000;
 
-// Enable CORS for all origins or specify specific ones
-const allowedOrigins = ['http://localhost:5173', 'https://balloon-game-three.vercel.app'];
+// Configure CORS
+const allowedOrigins = [
+  'https://balloon-game-three.vercel.app',
+  'http://localhost:5173', // Add this for local development
+];
+
 app.use(cors({
-    origin: allowedOrigins,
-    methods: "POST",
-    credentials: true // If you're using cookies or authorization headers
+  origin: allowedOrigins,
+  methods: ['GET', 'POST'], // Specify allowed methods
+  credentials: true, // Allow credentials if needed
 }));
 
 app.use(express.json());
