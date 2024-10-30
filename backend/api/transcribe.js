@@ -8,9 +8,18 @@ require('dotenv').config(); // Load environment variables from .env file
 const app = express();
 const port = 5000;
 
-app.use(cors());
+// Enable CORS for all origins or specify specific ones
+const allowedOrigins = ['http://localhost:5173', 'https://balloon-game-three.vercel.app'];
+app.use(cors({
+    origin: allowedOrigins,
+    methods: "POST",
+    credentials: true // If you're using cookies or authorization headers
+}));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+
 
 const auth = new GoogleAuth({
   credentials: {
