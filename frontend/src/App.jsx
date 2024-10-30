@@ -9,6 +9,7 @@ import MobileBalloonPopGame from "./components/MobileBalloonPopGame";
 import BalloonSpace from "./components/BalloonSpace";
 import StartScreen from "./components/StartScreen";
 import BalloonGoogle from "./components/BalloonGoogle";
+import BalloonGoogleBase from "./components/BalloonGoogleBase";
 
 function App() {
   const scrollRef = useRef(null); // Create a ref for the scroll container
@@ -37,6 +38,7 @@ function App() {
           <Route path="/mobile" element={<MobileBalloonPopGame />} />
           <Route path="/vosk" element={<BalloonTest />} />
           <Route path="/goostt" element={<BalloonGoogle />} />
+          <Route path="/goosttbase" element={<BalloonGoogleBase />} />
           {/* <Route path="/test" element={<Test />} /> */}
         </Routes>
       </div>
