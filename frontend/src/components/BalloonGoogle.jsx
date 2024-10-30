@@ -139,7 +139,9 @@ const BalloonGoogle = () => {
   const transcribeAudio = async (audioBase64) => {
     try {
       console.log("Sending audio for transcription...");
-      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/transcribe`, {
+      const url = `${import.meta.env.VITE_BACKEND_URL}/api/transcribe`; // Ensure this is defined
+      console.log(`Transcribing audio at: ${url}`);
+      const response = await fetch(url, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
