@@ -1,0 +1,4 @@
+# .gitignore
+glass-setting-438008-u2-5c2c26c2800f.json
+.node_modules
+.env
