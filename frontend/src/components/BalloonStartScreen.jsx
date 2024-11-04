@@ -3,30 +3,26 @@ import buttonImage from "/imagebg.png"; // Image to be used as Play Now button
 
 const BalloonStartScreen = ({ startGame }) => {
   return (
-    <div className="absolute  z-[10] inset-0 flex justify-center items-center w-full h-screen">
+    <div className="absolute  z-[10]    inset-0 flex justify-center items-center w-full h-screen bg-black bg-opacity-20">
       {/* Inner div styled with Tailwind */}
-      <div className="max-w-lg w-full h-auto bg-[#FFEBDA] rounded-[20px] mx-auto flex flex-col items-center justify-center shadow-xl p-5 md:p-10">
-        {/* Header with specified styles */}
-        <h1 className="mb-6 font-poppins font-bold text-[32px] leading-[40px] text-[#264195] text-center">
+      <div className=" w-[80%] h-[100vw] lg:w-[50vw] lg:h-[40vw]  bg-[#FFEBDA] rounded-[5vw] flex flex-col items-center justify-center shadow-xl p-[4vw] ">
+         {/* Header with updated content */}
+         <h1 className="text-center mb-[3vw] font-poppins font-bold text-[9vw] lg:text-[5vw]  leading-none text-[#264195]">
           How to Play
         </h1>
 
-        {/* Instructions */}
-        <ul
-          className="w-full text-black list-disc list-inside mb-6 font-bold text-xl"
-          style={{ fontFamily: "'Comic Neue', sans-serif" }}
-        >
-          <li className="mb-2">
-            Every time you say{" "}
-            <span className="font-bold text-pink-600">POP</span>, one balloon on
-            the screen will burst.
-          </li>
-          <li className="mb-2">
-            Get your kid to say{" "}
-            <span className="font-bold text-pink-600">POP</span> with you and
-            try to burst as many balloons as possible.
-          </li>
+         {/* Updated instructions */}
+      
+      <ul className="w-full  flex flex-col justify-center  text-black list-decimal px-[5vw]  lg:px-0 mb-[3vw] lg:text-[2vw] text-[3.5vw] font-bold" style={{ fontFamily: "'Comic Neue', sans-serif" }}>
+          <li className="mb-4">Press and hold the spacebar <br/>
+         <span className="text-blue-400">(mic gets activated)</span></li>
+          <li className="mb-4">Say Pop Pop.</li>
+          <li className="mb-4">Enjoy the balloon go pop</li>
+          <li className="mb-4">Press the spacebar and repeat</li>
         </ul>
+     
+
+       
 
         {/* Play Now Button (using image) */}
         <div

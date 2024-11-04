@@ -268,7 +268,7 @@ function BalloonSpaceMobile() {
   // Format the score display
   const formattedScore = score.toString().padStart(3, "0").split("");
 
-  const getBalloonStyle = (index, totalBalloons) => {
+  const getBalloonStyleMobile = (index, totalBalloons) => {
     const radius = 40; // Adjust this value to control the semi-circle size
     const angle = (Math.PI / (totalBalloons - 1)) * index; // Divide the semi-circle among balloons
     const xOffset = radius * Math.cos(angle); // Calculate x position based on angle
@@ -282,7 +282,7 @@ function BalloonSpaceMobile() {
   };
 
   return (
-    <div className="flex flex-col  h-screen bg-gradient-to-b from-[#FFEBDA] to-[#FBD5B5] relative ">
+    <div className="flex flex-col  h-screen bg-gradient-to-b from-[#FFEBDA] to-[#FBD5B5] relative overflow-hidden">
       {showPlayButton && <BalloonStartScreen startGame={startGame} />}
 
       {showWaitlist && <Waitlist playAgain={playAgain} />}
@@ -338,7 +338,7 @@ function BalloonSpaceMobile() {
               {balloons.map((balloon, index) => (
                 <div
                   key={balloon.id}
-                  style={getBalloonStyle(index, balloons.length)}
+                  style={getBalloonStyleMobile(index, balloons.length)}
                 >
                   <Balloon  isPopped={balloon.popped} imageSrc={balloon.image} />
                 </div>
@@ -347,7 +347,7 @@ function BalloonSpaceMobile() {
           </div>
 
           {/* Mic Button for Mobile */}
-          <div className="fixed lg:hidden md:hidden bottom-[20vw] left-1/2 transform -translate-x-1/2">
+          <div className="fixed lg:hidden z-[11] md:hidden bottom-[5vw] left-1/2 transform -translate-x-1/2">
             <button
               className="mic-button  text-white p-4 rounded-full"
               onMouseDown={handleMicButtonDown}
@@ -356,7 +356,7 @@ function BalloonSpaceMobile() {
               onTouchEnd={handleMicButtonUp} // For mobile touch event
             >
       <svg width="88" height="88" viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="44" cy="44" r="41.7143" fill="#454545" stroke="#FC8594" stroke-width="3.42857"/>
+<circle cx="44" cy="44" r="41.7143" fill="#454545" stroke="#FC8594" strokeWidth="3.42857"/>
 <path d="M43.8496 48.3136C42.439 48.3136 41.2399 47.8199 40.2524 46.8324C39.2649 45.845 38.7712 44.6459 38.7712 43.2352V33.0784C38.7712 31.6677 39.2649 30.4687 40.2524 29.4812C41.2399 28.4937 42.439 28 43.8496 28C45.2603 28 46.4594 28.4937 47.4468 29.4812C48.4343 30.4687 48.928 31.6677 48.928 33.0784V43.2352C48.928 44.6459 48.4343 45.845 47.4468 46.8324C46.4594 47.8199 45.2603 48.3136 43.8496 48.3136ZM42.1568 64.2857V54.9579C39.2226 54.5629 36.7963 53.251 34.8778 51.0221C32.9593 48.7933 32 46.1976 32 43.2352H35.3856C35.3856 45.5769 36.2108 47.573 37.8613 49.2235C39.5118 50.874 41.5079 51.6992 43.8496 51.6992C46.1913 51.6992 48.1874 50.874 49.8379 49.2235C51.4884 47.573 52.3136 45.5769 52.3136 43.2352H55.6992C55.6992 46.1976 54.74 48.7933 52.8215 51.0221C50.903 53.251 48.4766 54.5629 45.5424 54.9579V64.2857H43.8496H42.1568ZM42.6647 44.5048C42.4107 44.2509 41.8324 43.5597 42.1568 43.2352C42.1568 42.2195 42.1568 38.1286 42.1568 37.649V38.1568V33.0784C42.1568 32.5988 42.4813 33.4029 42.1568 33.0784C41.8324 32.754 42.6364 33.0784 42.1568 33.0784C41.6772 33.0784 42.968 31.5478 42.6435 31.8723C42.319 32.1967 42.1568 32.5988 42.1568 33.0784V43.2352C42.1568 43.7149 42.319 44.1169 42.6435 44.4414C42.968 44.7658 42.185 44.5048 42.6647 44.5048Z" fill="white"/>
 </svg>
 
@@ -366,6 +366,12 @@ function BalloonSpaceMobile() {
          
         </>
       )}
+
+{listening && (
+            <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 text-center">
+              <p className="text-lg font-bold text-red-500">Listening...</p>
+            </div>
+          )}
     </div>
   );
 }
