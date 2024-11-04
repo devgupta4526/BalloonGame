@@ -7,8 +7,8 @@
 }
 
 .balloon {
-  width: 8vw; /* Adjust the width to fit your image */
-  height: 10vw; /* Adjust the height to fit your image */
+  width: 8vw; /* Adjust the width to fit your image 8 */
+  height: 10vw; /* Adjust the height to fit your image 10 */
   cursor: pointer;
   transition: transform 0.2s;
   animation: none;

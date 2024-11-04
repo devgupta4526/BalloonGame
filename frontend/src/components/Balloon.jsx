@@ -46,7 +46,7 @@ const Balloon = ({ isPopped , imageSrc, isRising }) => {
   return (
     <div className="balloon-container">
       {!isPopped ? (
-        <div  className={`balloon ${isRising ? 'balloon-rise' : ''}`}  style={balloonStyle}>
+        <div  className={`balloon w-[16vw] lg:w-[8vw] lg:h-[10vw] h-[12vw] ${isRising ? 'balloon-rise' : ''}`}  style={balloonStyle}>
           <img src={imageSrc} alt="Balloon" style={swayStyle}/>
         </div>
       ) : (

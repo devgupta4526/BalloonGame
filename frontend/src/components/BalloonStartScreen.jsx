@@ -3,7 +3,7 @@ import buttonImage from "/imagebg.png"; // Image to be used as Play Now button
 
 const BalloonStartScreen = ({ startGame }) => {
   return (
-    <div className="absolute inset-0 flex justify-center items-center w-full h-screen">
+    <div className="absolute  z-[10] inset-0 flex justify-center items-center w-full h-screen">
       {/* Inner div styled with Tailwind */}
       <div className="max-w-lg w-full h-auto bg-[#FFEBDA] rounded-[20px] mx-auto flex flex-col items-center justify-center shadow-xl p-5 md:p-10">
         {/* Header with specified styles */}
