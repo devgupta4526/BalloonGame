@@ -54,6 +54,12 @@ const StartScreen = () => {
             <p className="text-black">Explore the testing features of the app!</p>
           </div>
         </Link>
+        <Link to="/spacenew">
+          <div className="bg-white rounded-lg shadow-lg p-6 text-center hover:bg-blue-500 hover:text-white transition duration-300">
+            <h2 className="text-xl font-semibold text-black">Ballon Space Test</h2>
+            <p className="text-black">Explore the testing features of the app!</p>
+          </div>
+        </Link>
       </div>
     </div>
   );
