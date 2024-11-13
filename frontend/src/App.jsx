@@ -33,7 +33,7 @@ function App() {
     <Router>
       <div data-scroll-container ref={scrollRef}> 
         <Routes>
-          <Route path="/" element={<LandingPage />} />
+          <Route path="/landingpage" element={<LandingPage />} />
           <Route path="/start" element={<StartScreen />} />
           <Route path="/game" element={<BalloonPopGame />} />
           <Route path="/space" element={<BalloonSpace />} />
@@ -42,7 +42,7 @@ function App() {
           <Route path="/goostt" element={<BalloonGoogle />} />
           <Route path="/goosttbase" element={<BalloonGoogleBase />} />
           <Route path="/spacemobile" element={<BalloonSpaceMobile />} />
-          <Route path="/spacenew" element={<BalloonSpaceNew />} />
+          <Route path="/" element={<BalloonSpaceNew />} />
           {/* <Route path="/test" element={<Test />} /> */}
         </Routes>
       </div>
